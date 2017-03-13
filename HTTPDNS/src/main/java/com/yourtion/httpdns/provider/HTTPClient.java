@@ -11,7 +11,7 @@ import java.net.URL;
 
 class HTTPClient {
 
-    static public String get(String url) throws Exception{
+     public String get(String url) throws Exception {
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -43,4 +43,5 @@ class HTTPClient {
 
         return response.toString();
     }
+
 }
