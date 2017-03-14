@@ -1,5 +1,7 @@
 package com.yourtion.httpdns.provider;
 
+import com.yourtion.httpdns.Debug;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -11,9 +13,11 @@ import java.net.URL;
 
 class HTTPClient {
 
+    static int timeout = 1000;
+
     private Debug mDebug = new Debug("Client");
 
-    public String get(String url) throws Exception {
+    String get(String url) throws Exception {
 
         URL obj = new URL(url);
         mDebug.info(url);
@@ -21,7 +25,7 @@ class HTTPClient {
 
         // optional default is GET
         con.setRequestMethod("GET");
-        con.setConnectTimeout(1000);
+        con.setConnectTimeout(timeout);
 
         int responseCode = con.getResponseCode();
 

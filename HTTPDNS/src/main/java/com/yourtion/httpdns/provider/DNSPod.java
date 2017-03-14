@@ -1,5 +1,6 @@
 package com.yourtion.httpdns.provider;
 
+import com.yourtion.httpdns.Debug;
 import com.yourtion.httpdns.HTTPDNS;
 import com.yourtion.httpdns.Record;
 
