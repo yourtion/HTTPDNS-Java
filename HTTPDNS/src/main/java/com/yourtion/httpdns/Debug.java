@@ -7,7 +7,7 @@ import android.util.Log;
  */
 
 public class Debug {
-    static boolean isshow = BuildConfig.DEBUG;
+    static boolean isshow = false;
 
     private static String PREFIX = "HTTPDNS:";
     private String name;
