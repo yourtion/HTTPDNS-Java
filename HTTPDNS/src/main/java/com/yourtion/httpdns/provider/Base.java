@@ -15,6 +15,10 @@ abstract class Base {
     private Debug mDebug = new Debug("Base");
     private HTTPClient mClient = new HTTPClient();
 
+    public static void setTimeOut(int time) {
+        HTTPClient.timeout = time;
+    }
+
     public Record requestRecord(String domain) {
         String url = getRequestString(domain);
         try {

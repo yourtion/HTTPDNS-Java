@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import com.yourtion.httpdns.HTTPDNS;
 import com.yourtion.httpdns.Record;
 import com.yourtion.httpdns.provider.DNSPod;
 
@@ -37,6 +38,7 @@ public class MainActivity extends Activity {
         public void run() {
             // TODO Auto-generated method stub
             try {
+                HTTPDNS.setDebugMode(true);
                 DNSPod pod = new DNSPod();
                 Record rec = pod.requestRecord("qq.com");
                 System.out.println(rec);
