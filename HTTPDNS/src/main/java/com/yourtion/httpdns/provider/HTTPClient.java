@@ -11,9 +11,12 @@ import java.net.URL;
 
 class HTTPClient {
 
-     public String get(String url) throws Exception {
+    private Debug mDebug = new Debug("Client");
+
+    public String get(String url) throws Exception {
 
         URL obj = new URL(url);
+        mDebug.info(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
         // optional default is GET
@@ -21,8 +24,9 @@ class HTTPClient {
         con.setConnectTimeout(1000);
 
         int responseCode = con.getResponseCode();
-//        System.out.println("\nSending 'GET' request to URL : " + url);
-//        System.out.println("Response Code : " + responseCode);
+
+        mDebug.info("Sending 'GET' request to URL : " + url);
+        mDebug.info("Response Code : " + responseCode);
 
         BufferedReader in;
         if (200 <= responseCode && responseCode <= 299) {
@@ -39,7 +43,7 @@ class HTTPClient {
         in.close();
 
         //print result
-        System.out.println(response.toString());
+        mDebug.debug(response.toString());
 
         return response.toString();
     }
