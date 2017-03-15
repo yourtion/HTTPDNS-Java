@@ -7,7 +7,7 @@ import com.yourtion.httpdns.Record;
  * Created by Yourtion on 24/10/2016.
  */
 
-abstract class Base {
+public abstract class Base {
 
     abstract Record parseResult(String data);
     abstract String getRequestString(String domain);

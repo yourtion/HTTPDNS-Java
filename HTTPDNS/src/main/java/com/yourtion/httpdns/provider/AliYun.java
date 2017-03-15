@@ -18,16 +18,16 @@ public class AliYun extends Base {
     private Debug mDebug = new Debug("AliYun");
     private String mServer = "";
 
-    public AliYun(String accoundId) {
-        this(accoundId, true);
+    public AliYun(String accountId) {
+        this(accountId, true);
     }
 
-    public AliYun(String accoundId, boolean https) {
+    public AliYun(String accountId, boolean https) {
         String prefix = "http";
         if(https) {
             prefix = "https";
         }
-        this.mServer = String.format("%s://%s/%s", prefix, HTTPDNS.sHTTPDNS_ALIYUN_SERVER_ADDRESS, accoundId);
+        this.mServer = String.format("%s://%s/%s", prefix, HTTPDNS.sHTTPDNS_ALIYUN_SERVER_ADDRESS, accountId);
     }
 
     public String getRequestString(String domain) {
