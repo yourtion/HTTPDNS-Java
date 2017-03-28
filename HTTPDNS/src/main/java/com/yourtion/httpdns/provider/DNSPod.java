@@ -21,7 +21,7 @@ public class DNSPod extends Base {
 
     public String getRequestString(String domain) {
         mDebug.info(domain);
-        return String.format("%sd?dn=%s&ttl=1", HTTPDNS.sHTTPDNS_DNSPOD_SERVER_ADDRESS, domain);
+        return String.format("http://%s/d?dn=%s&ttl=1", HTTPDNS.sHTTPDNS_DNSPOD_SERVER_ADDRESS, domain);
     }
 
     public Record parseResult(String data) {
